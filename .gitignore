@@ -112,3 +112,19 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Boilerplate
+# -------
+/www/content/plugins/*
+/www/content/mu-plugins/acf-address/
+/www/content/mu-plugins/advanced-custom-fields-pro/
+/www/content/mu-plugins/gravityforms/
+/www/content/mu-plugins/polylang-slug/
+/www/content/mu-plugins/polylang/
+/www/content/mu-plugins/regenerate-thumbnails/
+/www/content/mu-plugins/soil/
+/www/content/mu-plugins/substrate/
+/www/content/mu-plugins/w3-total-cache/
+/www/content/mu-plugins/wordpress-seo/
+/www/content/mu-plugins/wp-polylang-translate-rewrite-slugs/
+/www/wordpress/
