@@ -1,0 +1,27 @@
+{
+  "name": "boilerplate/framework",
+  "type": "wordpress-muplugin",
+  "license": "© Boilerplate Inc.",
+  "description": "Project architecture, custom object types, utilities, and functionality.",
+  "homepage": "https://boilerplate.com",
+  "authors": [
+    {
+      "name": "Locomotive",
+      "email": "info@locomotive.ca",
+      "homepage": "http://locomotive.ca"
+    }
+  ],
+  "keywords": [
+    "wordpress"
+  ],
+  "support": {
+    "issues": "https://boilerplate.com/issues"
+  },
+  "require": {
+    "php": ">=5.4.0",
+    "composer/installers": "~1.0"
+  },
+  "extra": {
+    "installer-name": "boilerplate"
+  }
+}

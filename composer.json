@@ -1,0 +1,114 @@
+{
+  "name": "locomotivemtl/wordpress-boilerplate",
+  "type": "project",
+  "license": "© Locomotive",
+  "description": "Quick start opinionated WordPress boilerplate",
+  "homepage": "https://boilerplate.com",
+  "authors": [
+    {
+      "name": "Locomotive",
+      "email": "info@locomotive.ca",
+      "homepage": "http://locomotive.ca"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "http://wpackagist.org"
+    },
+    {
+      "type": "git",
+      "url": "https://gist.github.com/902ac7703021ce663eac.git"
+    },
+    {
+      "type": "git",
+      "url": "https://gist.github.com/baaee44487653e1afc0d.git"
+    },
+    {
+      "type": "git",
+      "url": "https://gist.github.com/dominiclord/3e170a912e86fae46141.git"
+    },
+    {
+      "type": "git",
+      "url": "https://gist.github.com/dominiclord/05d8b5397c3fdf53117a.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/mcaskill/wordpress-substrate.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/locomotivemtl/gravityforms.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/locomotivemtl/wp-polylang-translate-rewrite-slugs.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/locomotivemtl/advanced-custom-fields-pro.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/grappler/polylang-slug.git"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/strickdj/acf-field-address.git"
+    }
+  ],
+  "config": {
+      "vendor-dir": "vendor"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=5.4.0",
+    "composer/installers": "~1.0",
+    "johnpbloch/wordpress": "4.4.*",
+    "roots/soil": "3.6.*",
+    "mcaskill/php-array-group-by": "dev-master",
+    "mcaskill/php-array-insert": "dev-master",
+    "mcaskill/wordpress-substrate": "dev-master",
+    "dominiclord/conditionaltagcheck": "dev-master",
+    "dominiclord/sagethemewrapper": "dev-master",
+    "locomotivemtl/gravityforms": "dev-master",
+    "locomotivemtl/advanced-custom-fields-pro": "dev-master",
+    "locomotivemtl/wp-polylang-translate-rewrite-slugs": "dev-master",
+    "wpackagist-plugin/post-types-order": "1.8.*",
+    "wpackagist-plugin/polylang": "1.8.*",
+    "wpackagist-plugin/w3-total-cache": "0.9.*",
+    "wpackagist-plugin/regenerate-thumbnails": "2.2.*",
+    "wpackagist-plugin/wp-optimize": "1.8.*",
+    "wpackagist-plugin/enable-media-replace": "3.0.*",
+    "strickdj/acf-address": "dev-master",
+    "grappler/polylang-slug": "dev-trunk",
+    "yoast/wordpress-seo": "dev-trunk"
+  },
+  "disabled": {
+    "yoast/google-analytics": "dev-trunk"
+  },
+  "provide": {
+    "roots/sage": "@dev",
+    "boilerplate/framework": "@dev",
+    "boilerplate/theme": "@dev"
+  },
+  "extra": {
+    "installer-paths": {
+      "www/content/mu-plugins/{$name}/": [
+        "roots/soil",
+        "wpackagist-plugin/polylang",
+        "grappler/polylang-slug",
+        "mcaskill/wordpress-substrate",
+        "yoast/wordpress-seo",
+        "wpackagist-plugin/w3-total-cache",
+        "wpackagist-plugin/regenerate-thumbnails",
+        "strickdj/acf-address",
+        "type:wordpress-muplugin"
+      ],
+      "www/content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "www/content/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "www/wordpress"
+  }
+}
