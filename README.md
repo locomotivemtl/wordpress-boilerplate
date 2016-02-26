@@ -22,7 +22,7 @@ Quick setup opinionated WordPress boilerplate
         + `rg_gforms_key`
         + `rg_gforms_captcha_public_key`
         + `rg_gforms_captcha_private_key`
-4. Now that your database is set, save [`config/shared.php`](config/shared.php) as `config/local.php`. This file won't be committed and will contain your database credentials. Add them here.
+4. Now that your database is set, save [`config/sample.php`](config/sample.php) as `config/local.php`. This file won't be committed and will contain your database credentials. Add them here.
 5. Change your _Authentication Keys & Salts_ in [`config/shared.php`](config/shared.php).
 4. Run `composer install` at the trunk.
 6. All set. Default admin user is `boilerplate_user`:`boilerplate_password`. You should obviously create your own user and remove this one.
