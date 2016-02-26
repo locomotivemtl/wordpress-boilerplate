@@ -46,7 +46,53 @@ add_action( 'muplugins_loaded', function () {
  * @var array $framework_includes List of files to include.
  */
 
-$framework_includes = [];
+$framework_includes = [
+    // Helpers, Enhancements, Fixes
+    'includes/utilities/general.php',
+    'includes/utilities/developer.php',
+    'includes/utilities/formatting.php',
+    'includes/utilities/post.php',
+    'includes/utilities/dashboard.php',
+    'includes/utilities/polylang.php',
+
+    'includes/jquery-cdn.php',
+    'includes/capabilities.php',
+    'includes/canonical.php',
+    'includes/cleanup.php',
+    'includes/cleanup-dashboard.php',
+    'includes/nav-menus.php',
+    'includes/attachments.php',
+    'includes/users.php',
+    'includes/search.php',
+    'includes/staticpage.php',
+
+    // Object Types
+    'includes/model.interface.php',
+    'includes/model.abstract.php',
+    'includes/model.trait.singleton.php',
+    'includes/object.abstract.php',
+    'includes/object.abstract.php',
+    'includes/object.trait.polylang.php',
+    'includes/object.trait.permalink.php',
+    'includes/taxonomy.abstract.php',
+
+    'objects/all.php',
+    'objects/post.php',
+    'objects/page.php',
+
+    // Polylang
+    'includes/polylang-compat/compat.php',
+
+    // Advanced Custom Fields
+    'includes/acf.php',
+    'includes/polylang-compat/acf.php',
+
+    // Gravity Forms
+    'includes/polylang-compat/gf.php',
+
+    // Dashboard
+    'includes/init.php'
+];
 
 foreach ( $framework_includes as $file ) {
     $filepath = plugin_dir_path( __FILE__ ) . $file;
