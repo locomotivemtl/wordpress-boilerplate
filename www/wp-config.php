@@ -58,8 +58,8 @@ if ( ! defined('BASEPATH') ) define( 'BASEPATH', __DIR__ . DS );
 foreach ( [ 'local', 'shared' ] as $file ) {
 
     # Look for a configuration directory
-    if ( is_dir( BASEPATH . 'config' ) ) {
-        $file = 'config' . DS . $file . '.php';
+    if ( is_dir( BASEPATH . '../config' ) ) {
+        $file = '../config' . DS . $file . '.php';
     }
     else {
         $file = $file . '-config.php';
@@ -153,7 +153,7 @@ if ( ! defined('DB_COLLATE') ) define( 'DB_COLLATE', '' );
    Composer Packages
    ========================================================================== */
 
-require_once( WP_CONTENT_DIR . '/vendor/autoload.php');
+require_once( WP_CONTENT_DIR . '../../vendor/autoload.php');
 
 
 /* ==========================================================================

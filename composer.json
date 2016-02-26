@@ -100,9 +100,6 @@
         "wpackagist-plugin/polylang",
         "grappler/polylang-slug",
         "mcaskill/wordpress-substrate",
-        "yoast/wordpress-seo",
-        "wpackagist-plugin/w3-total-cache",
-        "wpackagist-plugin/regenerate-thumbnails",
         "strickdj/acf-address",
         "type:wordpress-muplugin"
       ],

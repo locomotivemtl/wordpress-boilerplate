@@ -46,19 +46,19 @@ sitemap.xml.gz
 /local-config.php
 /config/local.php
 
-content/advanced-cache.php
-content/backup-db/
-content/backups/
-content/blogs.dir/
-content/cache/
-content/upgrade/
-content/uploads/
-content/w3tc-config/
-content/db.php
-content/object-cache.php
-content/wp-cache-config.php
-content/plugins/w3tc-wp-loader.php
-content/plugins/hello.php
+www/content/advanced-cache.php
+www/content/backup-db/
+www/content/backups/
+www/content/blogs.dir/
+www/content/cache/
+www/content/upgrade/
+www/content/uploads/
+www/content/w3tc-config/
+www/content/db.php
+www/content/object-cache.php
+www/content/wp-cache-config.php
+www/content/plugins/w3tc-wp-loader.php
+www/content/plugins/hello.php
 
 /readme.html
 /license.txt
