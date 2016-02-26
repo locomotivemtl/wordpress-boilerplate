@@ -14,9 +14,9 @@ Quick setup opinionated WordPress boilerplate
 
 ## Installation
 
-1. Add this repo as a remote at the trunk of your project. It assumes your project's public directory is [www]. You can also simply paste the files in. Whichever.
+1. Add this repo as a remote at the trunk of your project. It assumes your project's public directory is [www](www). You can also simply paste the files in. Whichever.
 1. Start by replacing any mentions of `boilerplate` with whatever fits your need. Search all files!
-2. You can install `[example.sql]` for a barebones database to kick start your project. However, you'll need to change a few things.
+2. You can install [`example.sql`](example.sql) for a barebones database to kick start your project. However, you'll need to change a few things.
     - **Licenses and keys**
         + `acf_pro_license`
         + `rg_gforms_key`
