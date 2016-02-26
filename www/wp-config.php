@@ -153,7 +153,7 @@ if ( ! defined('DB_COLLATE') ) define( 'DB_COLLATE', '' );
    Composer Packages
    ========================================================================== */
 
-require_once( WP_CONTENT_DIR . '../../vendor/autoload.php');
+require_once( __DIR__ . '../../vendor/autoload.php');
 
 
 /* ==========================================================================
