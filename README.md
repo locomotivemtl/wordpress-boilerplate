@@ -23,4 +23,4 @@ Quick setup opinionated WordPress boilerplate
         + `rg_gforms_captcha_public_key`
         + `rg_gforms_captcha_private_key`
 3. Run `composer install` at the trunk.
-4. All set. Default admin user is `boilerplate_user`:`boilerplate_password`
+4. All set. Default admin user is `boilerplate_user`:`boilerplate_password`. You should obviously
