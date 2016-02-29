@@ -1,0 +1,182 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Boilerplate Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-02-29 09:36-0500\n"
+"PO-Revision-Date: 2016-02-29 09:36-0500\n"
+"Last-Translator: \n"
+"Language-Team: Locomotive <info@locomotive.ca>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.8\n"
+"X-Poedit-SearchPath-0: ../..\n"
+
+#: ../../includes/acf.php:281
+msgid "None"
+msgstr "Aucun"
+
+#: ../../includes/acf.php:282
+msgid "Site Archives"
+msgstr "Archives du site"
+
+#: ../../includes/acf.php:411
+msgid "Contact Information"
+msgstr "Information de contact"
+
+#: ../../includes/acf.php:412
+msgid "Contact"
+msgstr "Contact"
+
+#: ../../includes/capabilities.php:41
+msgctxt "User role"
+msgid "Developer"
+msgstr "Développeur"
+
+#: ../../includes/capabilities.php:43
+msgctxt "User role"
+msgid "Reader"
+msgstr "Lecteur"
+
+#: ../../includes/cleanup.php:24
+msgid "No syndication feed available."
+msgstr "Pas de RSS"
+
+#: ../../includes/init.php:22
+msgctxt "Used to explain or start an enumeration"
+msgid ": "
+msgstr " : "
+
+#: ../../includes/init.php:26
+msgctxt "Used to separate items in a list"
+msgid ", "
+msgstr ", "
+
+#: ../../includes/nav-menus.php:48
+msgid "Archives"
+msgstr "Archives"
+
+#: ../../includes/nav-menus.php:64
+msgid "No items."
+msgstr "Aucune entrée."
+
+#: ../../includes/nav-menus.php:82
+msgid "Add to Menu"
+msgstr "Ajouter au menu"
+
+#: ../../includes/nav-menus.php:171
+msgid "Archive"
+msgstr "Archives"
+
+#: ../../includes/nav-menus.php:172
+#, php-format
+msgid "%s Archive"
+msgstr "Archive %s"
+
+#: ../../includes/object.abstract.php:39
+#: ../../includes/taxonomy.abstract.php:35
+#, php-format
+msgid "Class \"%s\" not found."
+msgstr "Aucune class \"%s\" trouvé."
+
+#: ../../includes/object.trait.permalink.php:61
+#: ../../includes/staticpage.php:123
+#, php-format
+msgctxt "project options"
+msgid "%s Options"
+msgstr "%s Options"
+
+#: ../../includes/object.trait.permalink.php:72
+msgid ""
+"If you like, you may enter custom structures for your extra content type "
+"<abbr title=\"Universal Resource Locator\">URL</abbr>s here."
+msgstr ""
+"Si vous le souhaitez, vous pouvez spécifier une structure d&rsquo;<abbr "
+"title=\"Uniform Resource Locator, littéralement «&nbsp;localisateur uniforme "
+"de ressource&nbsp;»\">URL</abbr> personnalisée pour vos types de contenus "
+"supplémentaire."
+
+#: ../../includes/object.trait.permalink.php:72
+#, php-format
+msgid ""
+"For example, using a more common \"%s\" structure would make your article "
+"links like <code>http://example.org/editorials/%s/sample-post/</code>. If "
+"you leave these blank the defaults—the article name—will be used."
+msgstr ""
+"Par exemple, en utilisant une structure commune comme \"%s\" pour vos "
+"articles, vous obtiendrez des adresses web comme&nbsp;: <code>http://exemple."
+"org/editoriaux/%s/article-echantillon/</code>. Si vous laissez ce champ "
+"vide, les valeurs par défaut—le nom de l&rsquo;article—seront appliquées."
+
+#: ../../includes/object.trait.permalink.php:72
+msgid "Month and name"
+msgstr "Mois et titre"
+
+#: ../../includes/search.php:251 ../../includes/search.php:272
+msgctxt "URI slug"
+msgid "search"
+msgstr "recherche"
+
+#: ../../includes/staticpage.php:98
+#, php-format
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+#: ../../includes/staticpage.php:136
+msgid "Static pages"
+msgstr "Pages statiques"
+
+#: ../../includes/staticpage.php:181
+msgid "&mdash; Select &mdash;"
+msgstr "&mdash; Sélectionner &mdash;"
+
+#: ../../includes/utilities/general.php:67
+msgid "N/A"
+msgstr "N/D"
+
+#: ../../includes/utilities/general.php:67
+msgid "Not Available"
+msgstr "Non disponible"
+
+#: ../../index.php:100
+#, php-format
+msgid "Error locating %s for inclusion"
+msgstr "Fichier %s non-trouvé"
+
+#: ../../objects/page.php:39
+msgid "Redirect to first child"
+msgstr "Rediriger à première sous-page"
+
+#: ../../objects/page.php:40
+msgid "Redirect to closest parent"
+msgstr "Rediriger au plus proche parent"
+
+#: ../../objects/post.php:52
+msgctxt "URI slug"
+msgid "news"
+msgstr "actualites"
+
+#: ../../objects/post.php:67 ../../objects/post.php:68
+#: ../../objects/post.php:69
+msgid "News"
+msgstr "Actualités"
+
+#: ../../objects/post.php:70
+msgid "Article"
+msgstr "Article"
+
+#: ../../objects/post.php:71
+msgid "Search Articles"
+msgstr "Recherche des articles"
+
+#: ../../objects/post.php:72
+msgid "All Articles"
+msgstr "Tous les articles"
