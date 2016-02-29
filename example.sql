@@ -493,8 +493,6 @@ INSERT INTO `boilerplate_users` (`ID`, `user_login`, `user_pass`, `user_nicename
 VALUES
   (1, 'boilerplate_user', '$P$BSf35h.S.zQ9AItzkIIGKsLwxL/1vD/', 'boilerplate_user', 'boilerplate_user@boilerplate.dev', '', '2016-02-25 00:00:00', '', 0, 'boilerplate_user');
 
-
-
 /*!40000 ALTER TABLE `boilerplate_users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -512,3 +510,167 @@ CREATE TABLE `boilerplate_rg_form` (
   `is_trash` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Table structure for table `boilerplate_rg_lead`
+--
+
+DROP TABLE IF EXISTS `boilerplate_rg_lead`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `boilerplate_rg_lead` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `form_id` mediumint(8) unsigned NOT NULL,
+  `post_id` bigint(20) unsigned DEFAULT NULL,
+  `date_created` datetime NOT NULL,
+  `is_starred` tinyint(1) NOT NULL DEFAULT '0',
+  `is_read` tinyint(1) NOT NULL DEFAULT '0',
+  `ip` varchar(39) NOT NULL,
+  `source_url` varchar(200) NOT NULL DEFAULT '',
+  `user_agent` varchar(250) NOT NULL DEFAULT '',
+  `currency` varchar(5) DEFAULT NULL,
+  `payment_status` varchar(15) DEFAULT NULL,
+  `payment_date` datetime DEFAULT NULL,
+  `payment_amount` decimal(19,2) DEFAULT NULL,
+  `payment_method` varchar(30) DEFAULT NULL,
+  `transaction_id` varchar(50) DEFAULT NULL,
+  `is_fulfilled` tinyint(1) DEFAULT NULL,
+  `created_by` bigint(20) unsigned DEFAULT NULL,
+  `transaction_type` tinyint(1) DEFAULT NULL,
+  `status` varchar(20) NOT NULL DEFAULT 'active',
+  PRIMARY KEY (`id`),
+  KEY `form_id` (`form_id`),
+  KEY `status` (`status`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `boilerplate_rg_lead_detail`
+--
+
+DROP TABLE IF EXISTS `boilerplate_rg_lead_detail`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `boilerplate_rg_lead_detail` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `lead_id` int(10) unsigned NOT NULL,
+  `form_id` mediumint(8) unsigned NOT NULL,
+  `field_number` float NOT NULL,
+  `value` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `form_id` (`form_id`),
+  KEY `lead_id` (`lead_id`),
+  KEY `lead_field_number` (`lead_id`,`field_number`),
+  KEY `lead_field_value` (`value`(191))
+) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `boilerplate_rg_lead_detail_long`
+--
+
+DROP TABLE IF EXISTS `boilerplate_rg_lead_detail_long`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `boilerplate_rg_lead_detail_long` (
+  `lead_detail_id` bigint(20) unsigned NOT NULL,
+  `value` longtext,
+  PRIMARY KEY (`lead_detail_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `boilerplate_rg_lead_meta`
+--
+
+DROP TABLE IF EXISTS `boilerplate_rg_lead_meta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `boilerplate_rg_lead_meta` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `form_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `lead_id` bigint(20) unsigned NOT NULL,
+  `meta_key` varchar(255) DEFAULT NULL,
+  `meta_value` longtext,
+  PRIMARY KEY (`id`),
+  KEY `meta_key` (`meta_key`(191)),
+  KEY `lead_id` (`lead_id`),
+  KEY `form_id_meta_key` (`form_id`,`meta_key`(191))
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `boilerplate_rg_lead_notes`
+--
+
+DROP TABLE IF EXISTS `boilerplate_rg_lead_notes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `boilerplate_rg_lead_notes` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `lead_id` int(10) unsigned NOT NULL,
+  `user_name` varchar(250) DEFAULT NULL,
+  `user_id` bigint(20) DEFAULT NULL,
+  `date_created` datetime NOT NULL,
+  `value` longtext,
+  `note_type` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `lead_id` (`lead_id`),
+  KEY `lead_user_key` (`lead_id`,`user_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `boilerplate_rg_form_meta`
+--
+
+DROP TABLE IF EXISTS `boilerplate_rg_form_meta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `boilerplate_rg_form_meta` (
+  `form_id` mediumint(8) unsigned NOT NULL,
+  `display_meta` longtext COLLATE utf8_unicode_ci,
+  `entries_grid_meta` longtext COLLATE utf8_unicode_ci,
+  `confirmations` longtext COLLATE utf8_unicode_ci,
+  `notifications` longtext COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`form_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `boilerplate_rg_form_view`
+--
+
+DROP TABLE IF EXISTS `boilerplate_rg_form_view`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `boilerplate_rg_form_view` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `form_id` mediumint(8) unsigned NOT NULL,
+  `date_created` datetime NOT NULL,
+  `ip` char(15) DEFAULT NULL,
+  `count` mediumint(8) unsigned NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `form_id` (`form_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=231 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `boilerplate_rg_incomplete_submissions`
+--
+
+DROP TABLE IF EXISTS `boilerplate_rg_incomplete_submissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `boilerplate_rg_incomplete_submissions` (
+  `uuid` char(32) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `form_id` mediumint(8) unsigned NOT NULL,
+  `date_created` datetime NOT NULL,
+  `ip` varchar(39) NOT NULL,
+  `source_url` longtext NOT NULL,
+  `submission` longtext NOT NULL,
+  PRIMARY KEY (`uuid`),
+  KEY `form_id` (`form_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
