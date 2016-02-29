@@ -94,9 +94,9 @@ LOCK TABLES `boilerplate_options` WRITE;
 
 INSERT INTO `boilerplate_options` (`option_name`, `option_value`, `autoload`)
 VALUES
-    ('siteurl','https://boilerplate.com/wordpress','yes'),
-    ('home','https://boilerplate.com','yes'),
-    ('admin_email','info@boilerplate.com','yes'),
+    ('siteurl','https://boilerplate.dev/wordpress','yes'),
+    ('home','https://boilerplate.dev','yes'),
+    ('admin_email','info@boilerplate.dev','yes'),
     ('blogname','Boilerplate Inc.','yes'),
     ('blogdescription','','yes'),
     ('db_version','35700','yes'),
@@ -491,7 +491,7 @@ LOCK TABLES `boilerplate_users` WRITE;
 
 INSERT INTO `boilerplate_users` (`ID`, `user_login`, `user_pass`, `user_nicename`, `user_email`, `user_url`, `user_registered`, `user_activation_key`, `user_status`, `display_name`)
 VALUES
-  (1, 'boilerplate_user', '$P$BSf35h.S.zQ9AItzkIIGKsLwxL/1vD/', 'boilerplate_user', 'boilerplate_user@boilerplate.com', '', '2016-02-25 00:00:00', '', 0, 'boilerplate_user');
+  (1, 'boilerplate_user', '$P$BSf35h.S.zQ9AItzkIIGKsLwxL/1vD/', 'boilerplate_user', 'boilerplate_user@boilerplate.dev', '', '2016-02-25 00:00:00', '', 0, 'boilerplate_user');
 
 
 
