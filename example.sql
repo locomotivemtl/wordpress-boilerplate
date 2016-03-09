@@ -373,7 +373,7 @@ VALUES
 UNLOCK TABLES;
 
 
-# Dump of table wp_termmeta
+# Dump of table boilerplate_termmeta
 # ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `boilerplate_termmeta`;
@@ -511,13 +511,12 @@ CREATE TABLE `boilerplate_rg_form` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Table structure for table `boilerplate_rg_lead`
---
+
+# Dump of table boilerplate_rg_lead
+# ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `boilerplate_rg_lead`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `boilerplate_rg_lead` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `form_id` mediumint(8) unsigned NOT NULL,
@@ -542,15 +541,13 @@ CREATE TABLE `boilerplate_rg_lead` (
   KEY `form_id` (`form_id`),
   KEY `status` (`status`)
 ) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `boilerplate_rg_lead_detail`
---
+
+# Dump of table boilerplate_rg_lead_detail
+# ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `boilerplate_rg_lead_detail`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `boilerplate_rg_lead_detail` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `lead_id` int(10) unsigned NOT NULL,
@@ -563,29 +560,25 @@ CREATE TABLE `boilerplate_rg_lead_detail` (
   KEY `lead_field_number` (`lead_id`,`field_number`),
   KEY `lead_field_value` (`value`(191))
 ) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `boilerplate_rg_lead_detail_long`
---
+
+# Dump of table boilerplate_rg_lead_detail_long
+# ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `boilerplate_rg_lead_detail_long`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `boilerplate_rg_lead_detail_long` (
   `lead_detail_id` bigint(20) unsigned NOT NULL,
   `value` longtext,
   PRIMARY KEY (`lead_detail_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `boilerplate_rg_lead_meta`
---
+
+# Dump of table boilerplate_rg_lead_meta
+# ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `boilerplate_rg_lead_meta`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `boilerplate_rg_lead_meta` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `form_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -597,15 +590,13 @@ CREATE TABLE `boilerplate_rg_lead_meta` (
   KEY `lead_id` (`lead_id`),
   KEY `form_id_meta_key` (`form_id`,`meta_key`(191))
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `boilerplate_rg_lead_notes`
---
+
+# Dump of table boilerplate_rg_lead_notes
+# ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `boilerplate_rg_lead_notes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `boilerplate_rg_lead_notes` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `lead_id` int(10) unsigned NOT NULL,
@@ -618,15 +609,13 @@ CREATE TABLE `boilerplate_rg_lead_notes` (
   KEY `lead_id` (`lead_id`),
   KEY `lead_user_key` (`lead_id`,`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `boilerplate_rg_form_meta`
---
+
+# Dump of table boilerplate_rg_form_meta
+# ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `boilerplate_rg_form_meta`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `boilerplate_rg_form_meta` (
   `form_id` mediumint(8) unsigned NOT NULL,
   `display_meta` longtext COLLATE utf8_unicode_ci,
@@ -635,15 +624,13 @@ CREATE TABLE `boilerplate_rg_form_meta` (
   `notifications` longtext COLLATE utf8_unicode_ci,
   PRIMARY KEY (`form_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `boilerplate_rg_form_view`
---
+
+# Dump of table boilerplate_rg_form_view
+# ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `boilerplate_rg_form_view`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `boilerplate_rg_form_view` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `form_id` mediumint(8) unsigned NOT NULL,
@@ -653,15 +640,13 @@ CREATE TABLE `boilerplate_rg_form_view` (
   PRIMARY KEY (`id`),
   KEY `form_id` (`form_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=231 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Table structure for table `boilerplate_rg_incomplete_submissions`
---
+
+# Dump of table boilerplate_rg_incomplete_submissions
+# ------------------------------------------------------------
 
 DROP TABLE IF EXISTS `boilerplate_rg_incomplete_submissions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `boilerplate_rg_incomplete_submissions` (
   `uuid` char(32) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
@@ -673,4 +658,3 @@ CREATE TABLE `boilerplate_rg_incomplete_submissions` (
   PRIMARY KEY (`uuid`),
   KEY `form_id` (`form_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
