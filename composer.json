@@ -1,7 +1,7 @@
 {
   "name": "locomotivemtl/wordpress-boilerplate",
   "type": "project",
-  "license": "© Locomotive",
+  "license": "MIT",
   "description": "Quick start opinionated WordPress boilerplate",
   "homepage": "https://boilerplate.com",
   "authors": [
