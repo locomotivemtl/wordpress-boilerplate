@@ -1,0 +1,11 @@
+path: www/wordpress
+
+server:
+  docroot: www
+
+require:
+  - vendor/autoload.php
+
+disabled_commands:
+  - core download
+  - core config

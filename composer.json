@@ -1,0 +1,175 @@
+{
+    "type": "project",
+    "name": "locomotivemtl/wordpress-boilerplate",
+    "description": "A modern WordPress project boilerplate.",
+    "license": "MIT",
+    "keywords": [
+        "locomotive",
+        "composer",
+        "wordpress",
+        "wp",
+        "wp-config",
+        "boilerplate"
+    ],
+    "support": {
+        "source": "https://github.com/locomotivemtl/wordpress-boilerplate",
+        "issues": "https://github.com/locomotivemtl/wordpress-boilerplate/issues"
+    },
+    "authors": [
+		{
+			"name": "Locomotive",
+			"homepage": "https://locomotive.ca"
+		},
+        {
+            "name": "Chauncey McAskill",
+            "email": "chauncey@mcaskill.ca",
+            "homepage": "https://mcaskill.ca"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "composer/installers": "^2.1",
+        "junaidbhura/advanced-custom-fields-pro": "*",
+        "junaidbhura/gravityforms": "*",
+        "junaidbhura/polylang-pro": "*",
+        "mcaskill/wp-ecocide": "dev-main",
+        "oscarotero/env": "^2.1",
+        "roots/bedrock-autoloader": "^1.0",
+        "roots/bedrock-disallow-indexing": "^2.0",
+        "roots/wordpress": "^6.0.3",
+        "roots/wp-config": "^1.0.0",
+        "roots/wp-password-bcrypt": "^1.1.0",
+        "vlucas/phpdotenv": "^5.5",
+        "wpackagist-plugin/aryo-activity-log": "^2.7",
+        "wpackagist-theme/twentytwentytwo": "^1.2"
+    },
+    "require-dev": {
+		"roave/security-advisories": "dev-latest",
+		"wp-jazz/coding-standards": "^1"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "junaidbhura/advanced-custom-fields-pro",
+                "version": "6.0.2",
+                "type": "wordpress-muplugin",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://www.advancedcustomfields.com/"
+                },
+                "require": {
+                    "junaidbhura/composer-wp-pro-plugins": "*"
+                },
+                "provide": {
+                    "wpackagist-plugin/advanced-custom-fields-implementation": "6.0.2"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "junaidbhura/gravityforms",
+                "version": "2.6.7",
+                "type": "wordpress-muplugin",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://www.gravityforms.com/"
+                },
+                "require": {
+                    "junaidbhura/composer-wp-pro-plugins": "*"
+                },
+                "provide": {
+                    "wpackagist-plugin/gravityforms-implementation": "2.6.7"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "junaidbhura/polylang-pro",
+                "version": "3.2.8",
+                "type": "wordpress-muplugin",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://www.polylang.pro/"
+                },
+                "require": {
+                    "junaidbhura/composer-wp-pro-plugins": "*"
+                },
+                "provide": {
+                    "wpackagist-plugin/polylang-implementation": "3.2.8"
+                }
+            }
+        }
+    ],
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+            "junaidbhura/composer-wp-pro-plugins": true,
+			"roots/wordpress-core-installer": true
+		},
+		"preferred-install": "dist",
+		"optimize-autoloader": true,
+		"sort-packages": true
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-main": "1.x-dev"
+		},
+		"installer-paths": {
+			"www/mu-plugins/{$name}/": [
+				"type:wordpress-muplugin"
+			],
+			"www/plugins/{$name}/": [
+				"type:wordpress-plugin"
+			],
+			"www/themes/{$name}/": [
+				"type:wordpress-theme"
+			],
+			"www/{$name}/": [
+				"type:wordpress-dropin"
+			]
+		},
+		"wordpress-install-dir": "www/wordpress"
+	},
+	"scripts": {
+		"post-root-package-install": [
+			"@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+		],
+		"post-install-cmd": [
+			"@fix:wp-stubs"
+		],
+		"post-update-cmd": [
+			"@fix:wp-stubs"
+		],
+		"fix:wp-stubs": [
+			"bin/fix-wp-stubs.sh"
+		],
+		"lint": [
+			"@lint:phpcs",
+			"@lint:phpstan",
+			"@lint:psalm"
+		],
+		"lint:phpcs": [
+			"phpcs -ps --colors"
+		],
+		"lint:phpstan": [
+			"phpstan analyze"
+		],
+		"lint:psalm": [
+			"psalm"
+		]
+	}
+}

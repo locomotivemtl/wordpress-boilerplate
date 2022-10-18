@@ -1,0 +1,21 @@
+# editorconfig.org
+
+root = true
+
+[/{*,.github/**,bin/**,config/**,public/*,public/mu-plugins/*}]
+charset = utf-8
+end_of_line = lf
+indent_style = tab
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[/{*,.github/**}.{md,neon,neon.dist,yml}]
+indent_size = 2
+indent_style = space
+
+[/{*,.github/**}.md]
+trim_trailing_whitespace = false
+
+[/composer.lock]
+indent_size = 4
+indent_style = space

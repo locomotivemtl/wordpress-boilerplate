@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<psalm
+	errorBaseline="psalm-baseline.xml"
+	hoistConstants="true"
+	resolveFromConfigFile="true"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://getpsalm.org/schema/config"
+	xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+>
+	<projectFiles>
+		<directory name="config/" />
+		<file name="www/mu-plugins/*.php" />
+		<file name="www/index.php" />
+		<file name="www/wp-config.php" />
+		<ignoreFiles>
+			<directory name="www/wordpress/" />
+		</ignoreFiles>
+	</projectFiles>
+
+	<issueHandlers>
+		<PropertyNotSetInConstructor errorLevel="suppress" />
+	</issueHandlers>
+
+	<plugins>
+		<pluginClass class="PsalmWordPress\Plugin" />
+	</plugins>
+</psalm>

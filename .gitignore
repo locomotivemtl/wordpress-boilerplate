@@ -1,0 +1,72 @@
+# WordPress
+# ----------------
+
+/www/*
+!/www/index.php
+!/www/wp-config.php
+
+!/www/mu-plugins
+/www/mu-plugins/*/
+
+!/www/plugins
+/www/plugins/*/
+
+!/www/themes
+/www/themes/*/
+
+!/www/uploads
+/www/uploads/*
+!/www/uploads/.gitkeep
+
+# Application
+# ----------------
+
+#~ !/www/wp-ajax.php
+#~ !/www/mu-plugins/foo
+#~ !/www/themes/qux
+
+/www/mu-plugins/wp-env-*.php
+!/www/mu-plugins/wp-env-production.php
+
+!/www/apple-touch-icon.png
+!/www/favicon.*
+
+# WP-CLI
+# ----------------
+
+.wp-cli
+wp-cli.local.yml
+
+# Dotenv
+# ----------------
+
+.env
+.env.*
+!.env.example
+
+# Development
+# ----------------
+
+phpcs.xml
+phpstan.neon
+phpunit.xml
+psalm.xml
+
+# Logs
+# ----------------
+
+*.log
+
+# Package Managers
+# ----------------
+
+/node_modules
+/vendor
+auth.json
+
+# Project Managers
+# ----------------
+
+/.idea
+/.nova
+/.vagrant

@@ -1,0 +1,8 @@
+url: https://localhost/
+
+apache_modules:
+  - mod_rewrite
+
+_:
+  merge: true
+  inherit: wp-cli.yml

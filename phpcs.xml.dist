@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<ruleset name="Locomotive WordPress Project Skeleton">
+	<!-- Scan only project skeleton files -->
+	<file>config/</file>
+	<file>www/mu-plugins/</file>
+	<file>www/index.php</file>
+	<file>www/wp-config.php</file>
+
+	<exclude-pattern>www/mu-plugins/*/</exclude-pattern>
+
+	<!-- Ignoring warnings when generating the exit code. -->
+	<config name="ignore_warnings_on_exit" value="1" />
+
+	<!-- Check for cross-version support for PHP 7.4 and higher. -->
+	<config name="testVersion" value="7.4-" />
+
+	<!-- Use Jazz as a base -->
+	<rule ref="Jazz" />
+
+	<rule ref="WordPress.WP.DeprecatedFunctions">
+		<properties>
+			<property name="minimum_supported_version" value="6.0" />
+		</properties>
+	</rule>
+
+	<rule ref="HM.Files">
+		<exclude-pattern>www/mu-plugins/</exclude-pattern>
+	</rule>
+
+	<rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
+		<exclude-pattern>config/*</exclude-pattern>
+		<exclude-pattern>www/mu-plugins/</exclude-pattern>
+		<exclude-pattern>www/index.php</exclude-pattern>
+		<exclude-pattern>www/wp-config.php</exclude-pattern>
+	</rule>
+</ruleset>
