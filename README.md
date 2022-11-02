@@ -18,7 +18,7 @@ Differences with [wp-jazz/wp-project-skeleton]:
 
 * The _Web root directory_ is `www` instead of `public`.
 * Includes a copy of [`wp-ajax.php`](www/wp-ajax.php), a near-identical copy
-  of WordPress' [`admin-ajax.php`](https://github.com/WordPress/WordPress/blob/6.0.1/wp-admin/admin-ajax.php).
+  of WordPress' [`admin-ajax.php`](https://github.com/WordPress/WordPress/blob/6.1.0/wp-admin/admin-ajax.php).
 * Prepared for integration with:
   * [Activity Log][pojome/activity-log] — Plugin to monitor and log all changes and activities.
   * [Advanced Custom Fields Pro][acf] — Plugin to allow adding extra content fields.

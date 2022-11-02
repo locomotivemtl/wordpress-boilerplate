@@ -36,12 +36,12 @@
         "oscarotero/env": "^2.1",
         "roots/bedrock-autoloader": "^1.0",
         "roots/bedrock-disallow-indexing": "^2.0",
-        "roots/wordpress": "^6.0.3",
+        "roots/wordpress": "^6.1.0",
         "roots/wp-config": "^1.0.0",
         "roots/wp-password-bcrypt": "^1.1.0",
         "vlucas/phpdotenv": "^5.5",
         "wpackagist-plugin/aryo-activity-log": "^2.7",
-        "wpackagist-theme/twentytwentytwo": "^1.2"
+        "wpackagist-theme/twentytwentythree": "^1.0"
     },
     "require-dev": {
 		"roave/security-advisories": "dev-latest",
