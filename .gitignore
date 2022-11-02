@@ -21,7 +21,7 @@
 # Application
 # ----------------
 
-#~ !/www/wp-ajax.php
+!/www/wp-ajax.php
 #~ !/www/mu-plugins/foo
 #~ !/www/themes/qux
 
