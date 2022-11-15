@@ -32,6 +32,7 @@
         "junaidbhura/advanced-custom-fields-pro": "*",
         "junaidbhura/composer-wp-pro-plugins": "^1.4",
         "locomotivemtl/wp-lib-cms": "dev-main",
+        "locomotivemtl/wp-lib-theme": "dev-main",
         "oscarotero/env": "^2.1",
         "roots/bedrock-autoloader": "^1.0",
         "roots/bedrock-disallow-indexing": "^2.0",
@@ -50,6 +51,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/locomotivemtl/wp-lib-cms"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/locomotivemtl/wp-lib-theme"
         },
         {
             "type": "composer",
