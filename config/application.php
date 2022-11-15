@@ -148,9 +148,11 @@ Config::define( 'SCRIPT_DEBUG', false );
 ini_set( 'display_errors', '0' );
 
 /**
- * Prevent issues with PHP's CLI environement
+ * Prevent issues with PHP's CLI environement.
+ *
+ * @link https://make.wordpress.org/cli/handbook/guides/troubleshooting/#wordpress-configuration-file-wp-config-php
  */
-if ( defined( 'WP_CLI' ) && WP_CLI ) {
+if ( defined( 'WP_CLI' ) && WP_CLI && ! isset( $_SERVER['HTTP_HOST'] ) ) {
 	$_SERVER['HTTP_HOST'] = 'host.local';
 }
 
