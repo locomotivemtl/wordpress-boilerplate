@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress Boilerplate">
+    <description>WordPress Boilerplate Coding Standards</description>
+
+    <config name="testVersion" value="7.4-" />
+
+    <!-- Scan only PHP files -->
+    <arg name="extensions" value="php"/>
+
+    <!-- Show colors in console -->
+    <arg value="-colors"/>
+
+    <!-- Show sniff codes in all reports -->
+    <arg value="ns"/>
+
+    <!-- Scan all files in directory -->
+    <file>.</file>
+
+    <!-- Ignore WordPress and Composer dependencies -->
+    <exclude-pattern>node_modules</exclude-pattern>
+    <exclude-pattern>tests</exclude-pattern>
+    <exclude-pattern>vendor</exclude-pattern>
+
+    <!-- Use Human Made as a base -->
+    <rule ref="HM">
+        <!-- Exclude filename related sniffs -->
+        <exclude name="HM.Files" />
+        <exclude name="WordPress.Files" />
+
+        <!-- Exclude short description sniff so short `@var` notation can be used -->
+        <exclude name="Generic.Commenting.DocComment.MissingShort" />
+
+        <!-- This sniff has been removed in the most recent PSR2R standard, but it is still included in the HM one -->
+        <exclude name="PSR2R.Namespaces.UseInAlphabeticalOrder.Order" />
+
+        <!-- This sniff does not respect references in comments and documentation -->
+        <exclude name="PSR2R.Namespaces.UnusedUseStatement.UnusedUse" />
+    </rule>
+
+    <rule ref="Squiz.Commenting">
+        <exclude name="Squiz.Commenting.FileComment.SpacingAfterOpen" />
+        <exclude name="Squiz.Commenting.FileComment.Missing" />
+
+        <!-- Exclude the tests from commenting sniffs -->
+        <exclude-pattern>/tests/*</exclude-pattern>
+    </rule>
+
+    <!-- Allow "/" in hook names -->
+    <rule ref="WordPress.NamingConventions.ValidHookName">
+        <properties>
+            <property name="additionalWordDelimiters" value="-=/" />
+        </properties>
+    </rule>
+
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array" value="wp-jazz-post-uuid" />
+        </properties>
+    </rule>
+
+    <rule ref="WordPress.WP.DeprecatedFunctions">
+        <properties>
+            <property name="minimum_supported_version" value="6.0" />
+        </properties>
+    </rule>
+</ruleset>

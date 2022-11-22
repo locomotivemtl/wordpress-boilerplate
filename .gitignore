@@ -11,6 +11,8 @@
 !/www/plugins
 /www/plugins/*/
 
+!/www/themes
+
 !/www/uploads
 /www/uploads/*
 !/www/uploads/.gitkeep

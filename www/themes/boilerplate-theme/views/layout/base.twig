@@ -1,0 +1,29 @@
+{% block html_head_container %}
+{% include 'layout/site-header.twig' %}
+	{% block head %}{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}">
+
+        {% block header %}
+            {% include 'partial/header.twig' with { is_fixed: true } %}
+        {% endblock %}
+
+        <main role="main">
+            {% block hero %}{% endblock %}
+
+            <div id="content">
+                {% block content %}
+                    {{ _e( 'Sorry, no content', 'app/theme') }}
+                {% endblock %}
+            </div>
+        </main>
+
+        {% block footer %}
+            {% include 'partial/footer.twig' %}
+        {% endblock %}
+
+        {{ function('wp_footer') }}
+	</body>
+</html>

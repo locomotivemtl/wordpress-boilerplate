@@ -1,0 +1,18 @@
+{% extends "layout/base.twig" %}
+
+{% block content %}
+	<h2>{{ foo }}</h2>
+	<p>{{ qux }}</p>
+	{% for post in posts %}
+		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+	{% endfor %}
+
+    <div class="o-grid -col-12">
+        <div class="o-grid_item u-gc-1/6@from-medium">
+            <h1 class="c-heading -h1-sans">Amet consectetur adipisicing</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi reiciendis alias aspernatur mollitia commodi. Soluta, sint corrupti quaerat cum aspernatur nostrum tempore ad, eveniet animi voluptatibus fugiat qui laboriosam debitis.</p>
+        </div>
+    </div>
+
+	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+{% endblock %}

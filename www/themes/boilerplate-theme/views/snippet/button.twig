@@ -1,0 +1,39 @@
+{% set _tag = tag | default('button') %}
+{% set _href = href | default(null) %}
+{% set _classes = classes | default(null) %}
+{% set _modifiers = modifiers | default(null) %}
+{% set _attr = attr | default(null) %}
+{% set _label = label | default(null) %}
+{% set _external = external | default(false) %}
+{% set _icon = icon | default(null) %}
+
+{% if _tag == 'a' and _href == null %}
+    {% set _tag = 'span' %}
+{% endif %}
+
+{% if _href != null %}
+    {% set _tag = 'a' %}
+{% endif %}
+
+<{{ _tag }}
+    class="c-button {{ _modifiers }} {{ _classes }}"
+    {% if _href %}href="{{ _href }}"{% endif %}
+    {% if _external %}target="_blank" rel="noopener noreferrer"{% endif %}
+    {% if _attr %}{{ _attr|raw }}{% endif %}
+    >
+    {% block inner %}
+        <span class="c-button_label">
+            {{ _label }}
+        </span>
+
+        {% if _icon %}
+            <span class="c-button_icon">
+                <span class="c-icon">
+                    <svg class="svg-{{ _icon }}" focusable="false" aria-hidden="true">
+                        <use xlink:href="{{ assets_uri }}/svgs/sprite.svg#{{ _icon }}"></use>
+                    </svg>
+                </span>
+            </span>
+        {% endif %}
+    {% endblock %}
+</{{ _tag }}>

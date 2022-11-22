@@ -1,0 +1,88 @@
+{#
+    Image snippet
+
+    The `img` parameter was made to receive formatted data from a CMS.
+    The use case would be to output an image without overriding is dimensions or other properties.
+
+    It needs to be an object with the following keys :
+        -src: String,
+        -width: Int,
+        -height: Int,
+        -alt?: String,
+        -caption?: String
+
+    ```twig
+    {% include 'image' with
+        img: project.featured_image
+    %}
+    ```
+#}
+
+{# Defaults #}
+{% set _width = img.width | default(1) %}
+{% set _height = img.height | default(1) %}
+{% set _src = img.src | default(null) %}
+{% set _alt = img.alt | default(null) %}
+{% set _caption = img.caption | default(null) %}
+
+{# Override properties #}
+{% set _width = width | default(_width) %}
+{% set _height = height | default(_height) %}
+{% set _src = src | default(_src) %}
+{% set _alt = alt | default(_alt) %}
+{% set _caption = caption | default(_caption) %}
+
+{# Misc. #}
+{% set _is_figure = is_figure | default(false) %}
+{% set _is_lazy_load = is_lazy_load | default(null) %}
+{% set _has_border_radius = has_border_radius | default(null) %}
+{% set _tag = _is_figure ? 'figure' : 'div' %}
+
+{# Classes & modifiers #}
+{% set _classes = classes | default(null) %}
+{% set _modifiers = modifiers | default(null) %}
+
+{% if _is_lazy_load %}
+    {% set _modifiers = _modifiers ~ ' -lazy-load' %}
+{% endif %}
+
+{% if _has_border_radius %}
+    {% set _modifiers = _modifiers ~ ' -border-radius' %}
+{% endif %}
+
+{% if _classes != null %}
+    {% set _classes = ' ' ~ _classes %}
+{% endif %}
+
+{% if _modifiers != null %}
+    {% set _classes = ' ' ~ _modifiers ~ ' ' ~ _classes %}
+{% endif %}
+
+{# ---------------------------------------- #}
+
+<{{_tag}} class="c-image{{ _classes }}">
+    <div class="c-image_inner">
+        <img
+            class="c-image_img"
+            alt="{{ _alt }}"
+            width="{{ _width }}"
+            height="{{ _height }}"
+            {% if _is_lazy_load == true %}
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 {{ _width }} {{ _height }}'%3E%3C/svg%3E"
+            data-src="{{ _src }}"
+            data-scroll
+            data-scroll-call="lazyLoad, Scroll"
+            {% else %}
+            src="{{ _src }}"
+            {% endif %}
+        >
+    </div>
+
+    {% if _caption %}
+        {% if _is_figure %}
+        <figcaption class="c-image_description">{{ _caption }}</figcaption>
+        {% else %}
+        <div class="c-image_description"><span>{{ _caption }}</span></div>
+        {% endif %}
+    {% endif %}
+</{{ _tag }}>
