@@ -40,6 +40,7 @@
         "roots/wp-config": "^1.0.0",
         "roots/wp-password-bcrypt": "^1.1.0",
         "vlucas/phpdotenv": "^5.5",
+        "wikimedia/composer-merge-plugin": "^2.0",
         "wpackagist-plugin/aryo-activity-log": "^2.7",
         "wpackagist-plugin/redirection": "^5.3"
     },
@@ -111,7 +112,7 @@
             "type": "package",
             "package": {
                 "name": "junaidbhura/polylang-pro",
-                "version": "3.2.8",
+                "version": "3.3",
                 "type": "wordpress-muplugin",
                 "dist": {
                     "type": "zip",
@@ -121,7 +122,7 @@
                     "junaidbhura/composer-wp-pro-plugins": "*"
                 },
                 "provide": {
-                    "wpackagist-plugin/polylang-implementation": "3.2.8"
+                    "wpackagist-plugin/polylang-implementation": "3.3"
                 }
             }
         }
@@ -133,7 +134,8 @@
             "composer/installers": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "junaidbhura/composer-wp-pro-plugins": true,
-            "roots/wordpress-core-installer": true
+            "roots/wordpress-core-installer": true,
+            "wikimedia/composer-merge-plugin": true
         },
         "preferred-install": "dist",
         "optimize-autoloader": true,
@@ -142,6 +144,11 @@
     "extra": {
         "branch-alias": {
             "dev-main": "1.x-dev"
+        },
+        "merge-plugin": {
+            "include": [
+                "www/mu-plugins/app/composer.json"
+            ]
         },
         "installer-paths": {
             "www/mu-plugins/{$name}/": [
