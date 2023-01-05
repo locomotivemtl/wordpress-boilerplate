@@ -28,7 +28,7 @@
 	],
 	"require": {
 		"php": ">=7.4",
-		"composer/installers": "^2.1",
+		"composer/installers": "^1.0 || ^2.0",
 		"junaidbhura/advanced-custom-fields-pro": "*",
 		"junaidbhura/composer-wp-pro-plugins": "^1.4",
 		"locomotivemtl/wp-lib-cms": "dev-main",
@@ -166,8 +166,11 @@
 				"require": {
 					"junaidbhura/composer-wp-pro-plugins": "*"
 				},
+				"replace": {
+					"wpackagist-plugin/advanced-custom-fields": "self.version"
+				},
 				"provide": {
-					"wpackagist-plugin/advanced-custom-fields-implementation": "6.0.3"
+					"wpackagist-plugin/advanced-custom-fields-implementation": "self.version"
 				}
 			}
 		},
@@ -185,7 +188,7 @@
 					"junaidbhura/composer-wp-pro-plugins": "*"
 				},
 				"provide": {
-					"wpackagist-plugin/gravityforms-implementation": "2.6.7"
+					"wpackagist-plugin/gravityforms-implementation": "self.version"
 				}
 			}
 		},
@@ -193,7 +196,7 @@
 			"type": "package",
 			"package": {
 				"name": "junaidbhura/polylang-pro",
-				"version": "3.3",
+				"version": "3.3.0",
 				"type": "wordpress-muplugin",
 				"dist": {
 					"type": "zip",
@@ -202,8 +205,11 @@
 				"require": {
 					"junaidbhura/composer-wp-pro-plugins": "*"
 				},
+				"replace": {
+					"wpackagist-plugin/polylang": "self.version"
+				},
 				"provide": {
-					"wpackagist-plugin/polylang-implementation": "3.3"
+					"wpackagist-plugin/polylang-implementation": "self.version"
 				}
 			}
 		}

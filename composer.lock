@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6049f346d4b586851e5d0fac0189c6d3",
+    "content-hash": "dd872b65a348e81c555317726db89155",
     "packages": [
         {
             "name": "anthonybudd/wp_ajax",
@@ -445,7 +445,10 @@
                 "junaidbhura/composer-wp-pro-plugins": "*"
             },
             "provide": {
-                "wpackagist-plugin/advanced-custom-fields-implementation": "6.0.3"
+                "wpackagist-plugin/advanced-custom-fields-implementation": "self.version"
+            },
+            "replace": {
+                "wpackagist-plugin/advanced-custom-fields": "self.version"
             },
             "type": "wordpress-muplugin"
         },
@@ -499,28 +502,30 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/locomotivemtl/wp-lib-cms.git",
-                "reference": "d4fe527655152e3066be891d48c4a6569cc27c3a"
+                "reference": "a9a679340c6af14feed10b2fb3753d6cc156ceb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/locomotivemtl/wp-lib-cms/zipball/d4fe527655152e3066be891d48c4a6569cc27c3a",
-                "reference": "d4fe527655152e3066be891d48c4a6569cc27c3a",
+                "url": "https://api.github.com/repos/locomotivemtl/wp-lib-cms/zipball/a9a679340c6af14feed10b2fb3753d6cc156ceb6",
+                "reference": "a9a679340c6af14feed10b2fb3753d6cc156ceb6",
                 "shasum": ""
             },
             "require": {
+                "composer/installers": "^1.0 || ^2.0",
                 "johnbillion/extended-cpts": "^5.0",
                 "mcaskill/php-array-insert": "^1.0",
                 "mcaskill/wp-ecocide": "dev-main",
                 "php": ">=7.4",
                 "wpackagist-plugin/acf-extended": "^0.8",
-                "wpackagist-plugin/advanced-custom-fields-implementation": "^6.0"
+                "wpackagist-plugin/advanced-custom-fields": "^6.0"
             },
             "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
                     "dev-main": "1.x-dev"
-                }
+                },
+                "installer-disable": true
             },
             "autoload": {
                 "files": [
@@ -548,7 +553,7 @@
                 "source": "https://github.com/locomotivemtl/wp-lib-cms/tree/main",
                 "issues": "https://github.com/locomotivemtl/wp-lib-cms/issues"
             },
-            "time": "2022-12-06T20:46:11+00:00"
+            "time": "2023-01-06T15:34:56+00:00"
         },
         {
             "name": "locomotivemtl/wp-lib-theme",
@@ -556,16 +561,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/locomotivemtl/wp-lib-theme.git",
-                "reference": "7ecc0f0de72d1702266f4b0895a0da21973d6ade"
+                "reference": "4926e9e86e8860691f67029b150a72ae983cb794"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/locomotivemtl/wp-lib-theme/zipball/7ecc0f0de72d1702266f4b0895a0da21973d6ade",
-                "reference": "7ecc0f0de72d1702266f4b0895a0da21973d6ade",
+                "url": "https://api.github.com/repos/locomotivemtl/wp-lib-theme/zipball/4926e9e86e8860691f67029b150a72ae983cb794",
+                "reference": "4926e9e86e8860691f67029b150a72ae983cb794",
                 "shasum": ""
             },
             "require": {
                 "anthonybudd/wp_ajax": "^1.0",
+                "composer/installers": "^1.0 || ^2.0",
                 "mcaskill/php-html-build-attributes": "^1.0",
                 "php": ">=7.4",
                 "timber/timber": "2.x-dev"
@@ -575,7 +581,8 @@
             "extra": {
                 "branch-alias": {
                     "dev-main": "1.x-dev"
-                }
+                },
+                "installer-disable": true
             },
             "autoload": {
                 "psr-4": {
@@ -596,7 +603,7 @@
                 "source": "https://github.com/locomotivemtl/wp-lib-theme/tree/main",
                 "issues": "https://github.com/locomotivemtl/wp-lib-theme/issues"
             },
-            "time": "2022-11-17T16:41:10+00:00"
+            "time": "2023-01-06T15:25:18+00:00"
         },
         {
             "name": "mcaskill/php-array-insert",
