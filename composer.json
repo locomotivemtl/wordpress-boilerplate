@@ -39,9 +39,11 @@
         "roots/wordpress": "^6.1.0",
         "roots/wp-config": "^1.0.0",
         "roots/wp-password-bcrypt": "^1.1.0",
+        "twig/html-extra": "^3.4",
         "vlucas/phpdotenv": "^5.5",
         "wikimedia/composer-merge-plugin": "^2.0",
         "wpackagist-plugin/aryo-activity-log": "^2.7",
+        "wpackagist-plugin/classic-editor": "^1.6",
         "wpackagist-plugin/redirection": "^5.3"
     },
     "require-dev": {
@@ -152,7 +154,8 @@
         },
         "installer-paths": {
             "www/mu-plugins/{$name}/": [
-                "type:wordpress-muplugin"
+                "type:wordpress-muplugin",
+                "wpackagist-plugin/classic-editor"
             ],
             "www/plugins/{$name}/": [
                 "type:wordpress-plugin"
@@ -193,5 +196,10 @@
         "lint:psalm": [
             "psalm"
         ]
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\Theme\\": "www/themes/boilerplate-theme/includes/"
+        }
     }
 }

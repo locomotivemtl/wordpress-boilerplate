@@ -14,21 +14,19 @@ const THEME_ASSETS_DIR = '../static/assets';
  * If you are installing and loading Composer dependencies outside of the theme,
  * this statement will be ignored.
  */
-$composer_autoload = dirname( __DIR__ ) . '/../vendor/autoload.php';
-if ( file_exists( $composer_autoload ) ) {
+$composer_autoload = dirname(__DIR__) . '/../vendor/autoload.php';
+if (file_exists($composer_autoload)) {
 	require_once $composer_autoload;
 }
 
-require_once __DIR__ . '/../includes/class-site.php';
-
 /**
-* Initialize Timber
-*/
+ * Initialize Timber
+ */
 Timber::init();
 
 /**
  * Sets the directories (inside your theme) to find .twig files
  */
-Timber::$dirname = [ '../views' ];
+Timber::$dirname = ['../views'];
 
 new Site();
