@@ -157,7 +157,7 @@
 			"type": "package",
 			"package": {
 				"name": "junaidbhura/advanced-custom-fields-pro",
-				"version": "6.0.3",
+				"version": "6.0.6",
 				"type": "wordpress-muplugin",
 				"dist": {
 					"type": "zip",
@@ -178,7 +178,7 @@
 			"type": "package",
 			"package": {
 				"name": "junaidbhura/gravityforms",
-				"version": "2.6.7",
+				"version": "2.6.8",
 				"type": "wordpress-muplugin",
 				"dist": {
 					"type": "zip",

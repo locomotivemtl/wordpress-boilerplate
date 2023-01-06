@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dd872b65a348e81c555317726db89155",
+    "content-hash": "7a1226bc2619e5cd3550d432fd19c395",
     "packages": [
         {
             "name": "anthonybudd/wp_ajax",
@@ -436,7 +436,7 @@
         },
         {
             "name": "junaidbhura/advanced-custom-fields-pro",
-            "version": "6.0.3",
+            "version": "6.0.6",
             "dist": {
                 "type": "zip",
                 "url": "https://www.advancedcustomfields.com/"
