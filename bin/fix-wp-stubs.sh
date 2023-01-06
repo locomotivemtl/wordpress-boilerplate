@@ -8,15 +8,23 @@
 # See: https://codex.wordpress.org/Pluggable_Functions
 #
 
+#
 # Exclude pluggable functions overridden by roots/wp-password-bcrypt
-fix_for_wp_password_bcrypt()
-{
-	sed -e 's/function wp_check_password/function __wp_check_password/' \
-		-e 's/function wp_hash_password/function __wp_hash_password/' \
-		-e 's/function wp_set_password/function __wp_set_password/' \
-		-i '' vendor/php-stubs/wordpress-stubs/wordpress-stubs.php
+#
+# Arguments:
+#    1. ...files - The PHP files to patch.
+#
+fix_for_wp_password_bcrypt() {
+	for file in "$@"; do
+		sed -e 's/function wp_check_password/function __wp_check_password/' \
+			-e 's/function wp_hash_password/function __wp_hash_password/' \
+			-e 's/function wp_set_password/function __wp_set_password/' \
+			-i '' $file
+	done
 }
 
-fix_for_wp_password_bcrypt
-
-echo "Excluding pluggable functions overridden by roots/wp-password-bcrypt"
+FILE=vendor/php-stubs/wordpress-stubs/wordpress-stubs.php
+if [[ -f "$FILE" ]]; then
+	echo "- Excluding pluggable functions overridden by roots/wp-password-bcrypt"
+	fix_for_wp_password_bcrypt $FILE
+fi
