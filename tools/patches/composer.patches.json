@@ -1,0 +1,7 @@
+{
+	"patches": {
+		"timber/timber": {
+			"Fixes theme path parsing for image generation.": "tools/patches/timber/timber/2.0/2458-fix-theme-image-generation.patch"
+		}
+	}
+}
