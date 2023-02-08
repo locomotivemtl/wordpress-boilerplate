@@ -29,6 +29,7 @@
 	"require": {
 		"php": ">=7.4",
 		"composer/installers": "^1.0 || ^2.0",
+		"cweagans/composer-patches": "^1.7",
 		"junaidbhura/advanced-custom-fields-pro": "*",
 		"junaidbhura/composer-wp-pro-plugins": "^1.4",
 		"locomotivemtl/wp-lib-cms": "dev-main",
@@ -63,7 +64,8 @@
 			"dealerdirect/phpcodesniffer-composer-installer": true,
 			"junaidbhura/composer-wp-pro-plugins": true,
 			"roots/wordpress-core-installer": true,
-			"wikimedia/composer-merge-plugin": true
+			"wikimedia/composer-merge-plugin": true,
+			"cweagans/composer-patches": true
 		},
 		"optimize-autoloader": true,
 		"preferred-install": "dist",
@@ -73,6 +75,7 @@
 		"branch-alias": {
 			"dev-main": "1.x-dev"
 		},
+		"composer-exit-on-patch-failure": true,
 		"installer-paths": {
 			"www/mu-plugins/{$name}/": [
 				"type:wordpress-muplugin",
@@ -93,6 +96,7 @@
 				"www/mu-plugins/app/composer.json"
 			]
 		},
+		"patches-file": "tools/patches/composer.patches.json",
 		"wordpress-install-dir": "www/wordpress"
 	},
 	"scripts": {

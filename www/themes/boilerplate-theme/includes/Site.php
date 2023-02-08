@@ -2,7 +2,9 @@
 
 namespace App\Theme;
 
+use App\Theme\Support\Path;
 use Timber\Timber;
+use Timber\ThemeHelper;
 use Twig\Environment as TwigEnvironment;
 
 /**
@@ -38,8 +40,8 @@ class Site extends \Timber\Site
         $this->theme_uri  = $theme->get_stylesheet_directory_uri();
         $this->theme_path = $theme->get_stylesheet_directory();
 
-        $this->assets_uri  = $this->theme_uri . '/' . THEME_ASSETS_DIR;
-        $this->assets_path = $this->theme_path . '/' . THEME_ASSETS_DIR;
+        $this->assets_uri  = Path::canonicalize( $this->theme_uri . '/' . THEME_ASSETS_DIR );
+        $this->assets_path = realpath( $this->theme_path . '/' . THEME_ASSETS_DIR );
 
         $this->register_actions();
         $this->register_filters();
@@ -161,30 +163,32 @@ class Site extends \Timber\Site
      * @param  string $handle The style's registered handle.
      * @return string
      */
-    public function filter_style_loader_tag(string $html, string $handle): string
-    {
+    public function filter_style_loader_tag( string $html, string $handle ) : string {
         preg_match_all(
             "!<link rel='stylesheet'\s?(id='[^']+')?\s+href='(.*)' type='text/css' media='(.*)' />!",
             $html,
             $matches
         );
 
-        if (empty($matches[2][0])) {
+        if ( empty( $matches[2][0] ) ) {
             return $html;
         }
 
-        $crit = wp_styles()->get_data($handle, 'critical');
+        $src = $matches[2][0];
 
-        if ('inline' === $crit) {
-            $src = str_replace(get_theme_file_uri(), '', $matches[2][0]);
-            $src = strtok($src, '?');
-            if (file_exists(get_theme_file_path($src))) {
-                $css = file_get_contents(get_theme_file_path($src));
+        $critical = wp_styles()->get_data( $handle, 'critical' );
 
-                if (!empty($css)) {
+        if ( 'inline' === $critical ) {
+            $path = str_replace( ThemeHelper::get_stylesheet_directory_uri(), '', $src );
+            $path = ThemeHelper::get_stylesheet_directory() . strtok( $path, '?' );
+
+            if ( is_readable( $path ) ) {
+                $css = file_get_contents( $path );
+
+                if ( ! empty( $css ) ) {
                     return sprintf(
                         "<style id=\"%s-inline-css\">\n%s\n</style>\n",
-                        esc_attr($handle),
+                        esc_attr( $handle ),
                         $css
                     );
                 }
@@ -194,20 +198,20 @@ class Site extends \Timber\Site
         $media  = '';
         $onload = '';
 
-        if (!empty($matches[3][0])) {
+        if ( ! empty( $matches[3][0] ) ) {
             $_media = $matches[3][0];
 
-            if ('delay' === $crit) {
+            if ( 'delay' === $critical ) {
                 // Assign the real media type when the stylesheet is loaded.
                 $media  = ' media="print"';
                 $onload = ' onload="this.media=\'' . $_media . '\'; this.onload=null; this.isLoaded=true"';
-            } elseif ($_media !== 'all') {
+            } elseif ( $_media !== 'all' ) {
                 // Only display media if it is meaningful.
                 $media = ' media="' . $_media . '"';
             }
         }
 
-        return '<link rel="stylesheet" id="' . esc_attr($handle) . '-css" href="' . $matches[2][0] . '"' . $media . $onload . '>' . "\n";
+        return '<link rel="stylesheet" id="' . esc_attr( $handle ) . '-css" href="' . $src . '"' . $media . $onload . '>' . "\n";
     }
 
     /**
@@ -404,6 +408,8 @@ class Site extends \Timber\Site
         if ($path && is_string($path)) {
             $url .= '/' . ltrim($path, '/');
         }
+
+        $url = Path::canonicalize($url);
 
         /**
          * Filters the theme URL.
