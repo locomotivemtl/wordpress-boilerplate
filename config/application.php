@@ -28,8 +28,8 @@ $base_path = dirname( __DIR__ );
 /**
  * Use Dotenv to set required environment variables and load '.env' file in root
  */
-$dotenv = Dotenv::createUnsafeImmutable( $base_path );
 if ( file_exists( $base_path . '/.env' ) ) {
+	$dotenv = Dotenv::createUnsafeImmutable( $base_path );
 	$dotenv->load();
 	$dotenv->required( [
 		'WP_HOME',
@@ -72,6 +72,10 @@ Config::define( 'WP_CONTENT_URL', Config::get( 'WP_HOME' ) );
 /**
  * Database Settings
  */
+if ( env( 'DB_SSL' ) ) {
+	Config::define( 'MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL );
+}
+
 Config::define( 'DB_NAME', env( 'DB_NAME' ) );
 Config::define( 'DB_USER', env( 'DB_USER' ) );
 Config::define( 'DB_PASSWORD', env( 'DB_PASSWORD' ) );

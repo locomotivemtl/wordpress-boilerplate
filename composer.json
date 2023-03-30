@@ -32,12 +32,12 @@
 		"cweagans/composer-patches": "^1.7",
 		"junaidbhura/advanced-custom-fields-pro": "*",
 		"junaidbhura/composer-wp-pro-plugins": "^1.4",
-		"locomotivemtl/wp-lib-cms": "dev-main",
-		"locomotivemtl/wp-lib-theme": "dev-main",
+		"locomotivemtl/wp-lib-cms": "^1.0@dev",
+		"locomotivemtl/wp-lib-theme": "^1.0@dev",
 		"oscarotero/env": "^2.1",
 		"roots/bedrock-autoloader": "^1.0",
 		"roots/bedrock-disallow-indexing": "^2.0",
-		"roots/wordpress": "^6.1.0",
+		"roots/wordpress": "^6.2.0",
 		"roots/wp-config": "^1.0.0",
 		"roots/wp-password-bcrypt": "^1.1.0",
 		"twig/html-extra": "^3.4",
@@ -61,21 +61,22 @@
 	"config": {
 		"allow-plugins": {
 			"composer/installers": true,
+			"cweagans/composer-patches": true,
 			"dealerdirect/phpcodesniffer-composer-installer": true,
 			"junaidbhura/composer-wp-pro-plugins": true,
 			"roots/wordpress-core-installer": true,
-			"wikimedia/composer-merge-plugin": true,
-			"cweagans/composer-patches": true
+			"wecodemore/wp-package-assets-publisher": true,
+			"wikimedia/composer-merge-plugin": true
 		},
 		"optimize-autoloader": true,
 		"preferred-install": "dist",
 		"sort-packages": true
 	},
 	"extra": {
+		"composer-exit-on-patch-failure": true,
 		"branch-alias": {
 			"dev-main": "1.x-dev"
 		},
-		"composer-exit-on-patch-failure": true,
 		"installer-paths": {
 			"www/mu-plugins/{$name}/": [
 				"type:wordpress-muplugin",
