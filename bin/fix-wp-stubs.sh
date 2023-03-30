@@ -8,6 +8,12 @@
 # See: https://codex.wordpress.org/Pluggable_Functions
 #
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	SEDOPTION="-i ''"
+else
+	SEDOPTION='-i'
+fi;
+
 #
 # Exclude pluggable functions overridden by roots/wp-password-bcrypt
 #
@@ -19,7 +25,7 @@ fix_for_wp_password_bcrypt() {
 		sed -e 's/function wp_check_password/function __wp_check_password/' \
 			-e 's/function wp_hash_password/function __wp_hash_password/' \
 			-e 's/function wp_set_password/function __wp_set_password/' \
-			-i '' $file
+			$SEDOPTION $file
 	done
 }
 
