@@ -37,13 +37,13 @@
 		"oscarotero/env": "^2.1",
 		"roots/bedrock-autoloader": "^1.0",
 		"roots/bedrock-disallow-indexing": "^2.0",
-		"roots/wordpress": "^6.2.0",
+		"roots/wordpress": "^6.3.0",
 		"roots/wp-config": "^1.0.0",
 		"roots/wp-password-bcrypt": "^1.1.0",
 		"twig/html-extra": "^3.4",
 		"vlucas/phpdotenv": "^5.5",
 		"wikimedia/composer-merge-plugin": "^2.0",
-		"wpackagist-plugin/aryo-activity-log": "^2.7",
+		"wpackagist-plugin/aryo-activity-log": "^2.8",
 		"wpackagist-plugin/classic-editor": "^1.6",
 		"wpackagist-plugin/redirection": "^5.3"
 	},
@@ -162,7 +162,7 @@
 			"type": "package",
 			"package": {
 				"name": "junaidbhura/advanced-custom-fields-pro",
-				"version": "6.0.6",
+				"version": "6.2.0",
 				"type": "wordpress-muplugin",
 				"dist": {
 					"type": "zip",
@@ -183,7 +183,7 @@
 			"type": "package",
 			"package": {
 				"name": "junaidbhura/gravityforms",
-				"version": "2.6.8",
+				"version": "2.7.13",
 				"type": "wordpress-muplugin",
 				"dist": {
 					"type": "zip",
@@ -201,7 +201,7 @@
 			"type": "package",
 			"package": {
 				"name": "junaidbhura/polylang-pro",
-				"version": "3.3.0",
+				"version": "3.4.5",
 				"type": "wordpress-muplugin",
 				"dist": {
 					"type": "zip",

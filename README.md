@@ -76,6 +76,7 @@ Differences with [wp-jazz/wp-project-skeleton]:
         * `DB_HOST` — Database host
         * Optionally, you can define `DATABASE_URL` for using a DSN instead of
             using the variables above (e.g. `mysql://user:password@127.0.0.1:3306/db_name`)
+    * `WP_DEVELOPMENT_MODE` — Set the development mode (`all` for development or empty string for production)
     * `WP_ENVIRONMENT_TYPE` — Set to environment (`development`, `staging`, `production`)
     * `WP_HOME` — Full URL to WordPress home (https://example.com)
     * `WP_SITEURL` — Avoid editing this variable. Full URL to WordPress including subdirectory (https://example.com/wordpress)

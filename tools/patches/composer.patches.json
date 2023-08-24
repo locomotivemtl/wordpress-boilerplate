@@ -1,7 +1,8 @@
 {
 	"patches": {
 		"timber/timber": {
-			"Fixes theme path parsing for image generation.": "tools/patches/timber/timber/2.0/2458-fix-theme-image-generation.patch"
+			"Fixes theme path parsing for image generation.": "tools/patches/timber/timber/2.0/2725-fix-theme-path-parsing-for-image-generation.patch",
+			"Fixes nav menu location compatibility with WPML.": "tools/patches/timber/timber/2.0/2733-fix-theme-location-compatibility-with-wpml.patch"
 		}
 	}
 }

@@ -78,10 +78,10 @@ class Site extends \Timber\Site
 
         // Enqueue theme scripts.
         wp_enqueue_script('theme-vendors', $this->get_assets_uri('scripts/vendors.js'), null, THEME_VERSION);
-        wp_script_add_data('theme-vendors', 'defer', true);
+        wp_script_add_data('theme-vendors', 'strategy', 'defer');
 
         wp_enqueue_script('theme-app', $this->get_assets_uri('scripts/app.js'), null, THEME_VERSION);
-        wp_script_add_data('theme-app', 'defer', true);
+        wp_script_add_data('theme-app', 'strategy', 'defer');
 
         // Enqueue theme styles.
         wp_enqueue_style('theme-critical', $this->get_assets_uri('styles/critical.css'), null, THEME_VERSION);
@@ -95,7 +95,7 @@ class Site extends \Timber\Site
      * Filters the HTML script tag of an enqueued script.
      *
      * This function cleans up the output of `<script>` tags and
-     * also adds attributes like async/defer.
+     * also adds attributes like crossorigin/integrity.
      *
      * If {@link @link https://core.trac.wordpress.org/ticket/12009 #12009} lands
      * in WordPress, this function can no-op since it would be handled in core.
@@ -108,45 +108,53 @@ class Site extends \Timber\Site
      */
     public function filter_script_loader_tag(string $html, string $handle): string
     {
-        $html = str_replace("type='text/javascript' ", '', $html);
+        $html = str_replace( "type='text/javascript' ", '', $html );
         $html = preg_replace_callback(
             '!document.write\(\s*\'(.+)\'\s*\)!is',
-            function ($m) {
-                return str_replace($m[1], addcslashes($m[1], '"'), $m[0]);
+            function ( $m ) {
+                return str_replace( $m[1], addcslashes( $m[1], '"' ), $m[0] );
             },
             $html
         );
 
-        $html = str_replace("'", '"', $html);
+        $html = str_replace( "'", '"', $html );
 
         $atts = [
-            'async'       => false,
-            'crossorigin' => false,
-            'defer'       => false,
-            'nomodule'    => false,
+            'crossorigin' => null,
+            'integrity'   => null,
+            'nomodule'    => null,
+            'type'        => null,
             'id'          => "{$handle}-js",
         ];
 
-        foreach ($atts as $name => $value) {
-            if ('id' !== $name) {
-                $value = wp_scripts()->get_data($handle, $name);
+        foreach ( $atts as $name => $value ) {
+            if ( 'id' !== $name ) {
+                $value = wp_scripts()->get_data( $handle, $name );
 
-                if (!$value) {
+                if ( ! $value ) {
                     continue;
                 }
             }
 
+            if (
+                true === $value &&
+                in_array( $name, [ 'module', 'importmap' ], true )
+            ) {
+                $value = $name;
+                $name  = 'type';
+            }
+
             // Prevent adding attribute when already added in #12009.
-            if (!preg_match("!\s{$name}(=|>|\s)!i", $html)) {
-                if (true === $value) {
-                    $attr = esc_html(" {$name}");
+            if ( ! preg_match( "!\s{$name}(=|>|\s)!i", $html ) ) {
+                if ( true === $value ) {
+                    $attr = esc_html( " {$name}" );
                 } else {
-                    $attr = sprintf(' %s="%s"', esc_html($name), esc_attr($value));
+                    $attr = sprintf( ' %s="%s"', esc_html( $name ), esc_attr( $value ) );
                 }
 
-                $html = preg_replace('!(?=></script>)!i', $attr, $html, 1);
+                $html = preg_replace( '!(?=></script>)!i', $attr, $html, 1 );
             }
-        }
+        } // end foreach
 
         return $html;
     }

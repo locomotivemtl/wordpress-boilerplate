@@ -46,6 +46,18 @@ if ( file_exists( $base_path . '/.env' ) ) {
 }
 
 /**
+ * The global development mode constant for WordPress and the project.
+ *
+ * @var string|null
+ */
+$wp_dev_mode = env( 'WP_DEVELOPMENT_MODE' );
+
+/**
+ * The `WP_DEVELOPMENT_MODE` constant is officially supported by WordPress.
+ */
+define( 'WP_DEVELOPMENT_MODE', ( $wp_dev_mode ?? '' ) );
+
+/**
  * The global environment constant for WordPress and the project.
  *
  * @var string|null

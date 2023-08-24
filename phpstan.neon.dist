@@ -12,4 +12,5 @@ parameters:
   excludePaths:
     - www/mu-plugins/*/
   dynamicConstantNames:
+    - WP_DEVELOPMENT_MODE
     - WP_ENVIRONMENT_TYPE
