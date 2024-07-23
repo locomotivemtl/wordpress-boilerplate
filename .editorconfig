@@ -2,7 +2,7 @@
 
 root = true
 
-[/{*,.github/**,bin/**,config/**,public/*,public/mu-plugins/*}]
+[/{*,.github/**,bin/**,config/**,www/*,www/mu-plugins/*}]
 charset = utf-8
 end_of_line = lf
 indent_style = tab
