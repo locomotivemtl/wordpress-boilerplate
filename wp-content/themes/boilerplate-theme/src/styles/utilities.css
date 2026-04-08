@@ -1,0 +1,37 @@
+@utility container {
+    @apply mx-auto max-w-none!;
+
+    @variant max-sm {
+        @apply px-unit-sm;
+    }
+
+    @variant sm {
+        @apply px-unit-lg;
+    }
+}
+
+@utility container-small {
+    @apply mx-auto max-w-none! px-unit-sm;
+}
+
+@utility animations-reduced {
+    html.animations-reduced & {
+        transform: none !important;
+    }
+}
+
+@utility skip-content {
+    position: absolute;
+    top: var(--spacing-fluid-xs);
+    left: 50%;
+    transform: translate3d(-50%, calc(-1 * var(--spacing-fluid-xs)), 0);
+    opacity: 0;
+    z-index: var(--z-index-highest);
+    pointer-events: none;
+
+    &:focus-within {
+        pointer-events: all;
+        opacity: 1;
+        transform: translate3d(-50%, 0, 0);
+    }
+}

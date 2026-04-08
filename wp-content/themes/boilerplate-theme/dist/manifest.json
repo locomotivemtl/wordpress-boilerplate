@@ -1,0 +1,36 @@
+{
+  "_component-manager.modern-Cfn1G0cT.js": {
+    "file": "component-manager.modern-Cfn1G0cT.js",
+    "name": "component-manager.modern"
+  },
+  "_sprite.svg": {
+    "file": "sprite.svg",
+    "src": "_sprite.svg"
+  },
+  "src/scripts/components/Accordion.ts": {
+    "file": "Accordion-CODw3kDc.js",
+    "name": "Accordion",
+    "src": "src/scripts/components/Accordion.ts",
+    "isEntry": true,
+    "imports": [
+      "_component-manager.modern-Cfn1G0cT.js"
+    ]
+  },
+  "src/scripts/main.ts": {
+    "file": "main-y5LDOrx4.js",
+    "name": "main",
+    "src": "src/scripts/main.ts",
+    "isEntry": true,
+    "imports": [
+      "_component-manager.modern-Cfn1G0cT.js"
+    ],
+    "css": [
+      "main-BeWX7Ap-.css"
+    ]
+  },
+  "src/styles/main.css": {
+    "file": "main-BeWX7Ap-.css",
+    "src": "src/styles/main.css",
+    "isEntry": true
+  }
+}

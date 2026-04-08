@@ -1,0 +1,33 @@
+@import '../../node_modules/locomotive-scroll/dist/locomotive-scroll.css';
+
+/* tailwind */
+@import './tailwind.css';
+@import './tailwind.variants.css';
+
+/* utilities */
+@import './typography.css';
+@import './utilities.css';
+
+/* Components */
+@import './components/icon.css';
+@import './components/image.css';
+@import './components/button.css';
+@import './components/accordion.css';
+
+body {
+    /* background-color: crimson; */
+}
+
+.transition-default {
+    transition: opacity var(--transition-duration) var(--ease-power-out);
+    opacity: 1;
+    transform: none;
+
+    html.has-js:not(.is-first-loaded) body:not(#error-page) & {
+        opacity: 0;
+    }
+}
+
+html.is-animating .transition-default {
+    opacity: 0;
+}

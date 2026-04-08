@@ -1,0 +1,60 @@
+@custom-variant hover {
+    @media (hover: hover) {
+        &:hover {
+            @slot;
+        }
+    }
+}
+
+@custom-variant hocus {
+    &:focus {
+        @slot;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            @slot;
+        }
+    }
+}
+
+@custom-variant hocus-within {
+    &:focus-within {
+        @slot;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            @slot;
+        }
+    }
+}
+
+@custom-variant md-or-hover {
+    @media (hover: hover), (min-width: 1000px) {
+        @slot;
+    }
+}
+
+@custom-variant aria-invalid {
+    &[aria-invalid='true'] {
+        @slot;
+    }
+}
+
+@custom-variant theme-dark (&:where(.theme-dark, .theme-dark *));
+@custom-variant theme-primary (&:where(.theme-primary, .theme-primary *));
+@custom-variant theme-secondary (&:where(.theme-secondary, .theme-secondary *));
+@custom-variant c-card-background (&:where(.c-card-background, .c-card-background *));
+
+@custom-variant animations-reduced {
+    html:where(.animations-reduced) & {
+        @slot;
+    }
+}
+
+@custom-variant not-animations-reduced {
+    html:not(.animations-reduced) & {
+        @slot;
+    }
+}

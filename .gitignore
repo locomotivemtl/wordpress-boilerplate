@@ -1,0 +1,101 @@
+# Exclude everything in root
+# and specific files.
+# Filter key sub-directories.
+# ----------
+/*
+!/wp-content/
+/wp-content/*
+!/wp-content/mu-plugins/
+/wp-content/mu-plugins/*
+!/wp-content/plugins/
+/wp-content/plugins/*
+!/wp-content/themes/
+/wp-content/themes/*
+
+# Environment files.
+.env
+
+# Package managers.
+node_modules/
+vendor/
+
+# Database files.
+*.sql
+
+# OS files.
+*~
+._*
+.cvs
+.DS_Store
+.hg
+.git
+.metadata_never_index
+.svn
+*.bak
+*.bck
+*.log
+*.swp
+Thumbs.db
+
+# Large/disallowed file types.
+# A CDN should be used for these.
+*.3gp
+*.3gpp
+*.asf
+*.asx
+*.avi
+*.bin
+*.deb
+*.dll
+*.dmg
+*.exe
+*.flv
+*.hqx
+*.img
+*.iso
+*.kar
+*.m4a
+*.m4v
+*.mid
+*.midi
+*.mng
+*.mov
+*.mp3
+*.mp4
+*.mpeg
+*.mpg
+*.msi
+*.msm
+*.msp
+*.ogg
+*.ra
+*.webm
+*.wmv
+
+# Include repository files.
+# ----------
+!/.github/
+!/tools/
+!/tools/**/*.sql
+!/README.md
+!/.editorconfig
+!/.gitattributes
+!/.gitignore
+!/apple-touch-icon-precomposed.png
+!/apple-touch-icon.png
+!/bitbucket-pipelines.yml
+!/favicon.ico
+!/wp-cli.yml
+
+# DDEV
+!/.ddev/
+
+# Laravel Valet
+!/.valetrc
+
+# Include custom plugins and themes.
+# ----------
+!/wp-content/mu-plugins/locomotive-*
+!/wp-content/plugins/
+!/wp-content/themes/boilerplate-theme
+/wp-content/themes/boilerplate-theme/dist

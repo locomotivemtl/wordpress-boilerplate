@@ -1,0 +1,12 @@
+@layer components {
+    .c-button {
+        display: inline-block;
+        border-radius: var(--radius-sm);
+        padding: 10px 15px;
+        background-color: theme('colors.gray-200');
+
+        @variant hocus {
+            background-color: theme('colors.gray-300');
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "plugins": ["@zackad/prettier-plugin-twig", "prettier-plugin-tailwindcss"],
+
+    "bracketSpacing": true,
+    "printWidth": 100,
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "tailwindStylesheet": "./src/styles/main.css",
+    "trailingComma": "all",
+    "twigAlwaysBreakObjects": false,
+    "twigSingleQuote": false,
+    "twigMultiTags": [
+        "nav,endnav",
+        "switch,case,default,endswitch",
+        "ifchildren,endifchildren",
+        "cache,endcache",
+        "tag,endtag"
+    ],
+    "useTabs": false
+}

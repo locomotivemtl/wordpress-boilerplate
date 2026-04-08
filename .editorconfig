@@ -1,0 +1,30 @@
+# This file is for unifying the coding style for different editors and IDEs
+# editorconfig.org
+
+# WordPress Coding Standards
+# https://make.wordpress.org/core/handbook/coding-standards/
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = tab
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[/{*.md,docs/*.md,*.json}]
+indent_size = 4
+indent_style = space
+
+[/{.*rc,*.y*ml}]
+indent_size = 2
+indent_style = space
+
+[/{index.php,license.txt,readme.html,wp-*.php,wp-admin/**,wp-content/**,wp-includes/**,xmlrpc.php}]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+indent_style = unset
+indent_size = unset

@@ -1,0 +1,5 @@
+node_modules/**
+vendor/**
+web/cpresources/**
+web/dist/**
+web/uploads/**
