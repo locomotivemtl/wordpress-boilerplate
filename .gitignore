@@ -98,4 +98,5 @@ Thumbs.db
 !/wp-content/mu-plugins/locomotive-*
 !/wp-content/plugins/
 !/wp-content/themes/boilerplate-theme
-/wp-content/themes/boilerplate-theme/dist
+/wp-content/themes/boilerplate-theme/dist/
+/wp-content/themes/boilerplate-theme/dist/*
